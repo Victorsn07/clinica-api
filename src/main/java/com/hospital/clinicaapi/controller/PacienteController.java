@@ -14,35 +14,35 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.hospital.clinicaapi.model.Medico;
-import com.hospital.clinicaapi.service.MedicoService;
+import com.hospital.clinicaapi.model.Paciente;
+import com.hospital.clinicaapi.service.PacienteService;
 
 @RestController
-@RequestMapping("/medico")
-public class MedicoController {
+@RequestMapping("/paciente")
+public class PacienteController {
 	
 	@Autowired
-	private MedicoService medicoService;
+	private PacienteService pacienteService;
 	
 	@GetMapping
-	public List<Medico> listarMedicos(){
-		return medicoService.listarMedicos();
+	public List<Paciente> listarPaciente(){
+		return pacienteService.listarPaciente();
 	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	public Medico salvarMedicos(@RequestBody Medico medico) {
-		return medicoService.salvarMedicos(medico);
+	public Paciente salvarPaciente(@RequestBody Paciente paciente) {
+		return pacienteService.salvarPaciente(paciente);
 	}
 	
 	@PutMapping
-	public Medico atualizarMedico(@RequestBody Medico medico) {
-		return medicoService.atualizarMedicos(medico);
+	public Paciente atualizarPaciente(@RequestBody Paciente paciente) {
+		return pacienteService.atualizarPaciente(paciente);
 	}
 	
 	@DeleteMapping
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	public void apagarMedico(@RequestParam(name="id")Long id) {
-		medicoService.apagarMedico(id);
+	public void apagarPaciente(@RequestParam(name="id")Long id) {
+		pacienteService.apagarPaciente(id);
 	}
 }

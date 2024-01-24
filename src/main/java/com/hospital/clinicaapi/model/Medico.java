@@ -6,6 +6,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 public class Medico {
@@ -20,6 +22,8 @@ public class Medico {
 	
 	private String especializacao;
 	
+	@OneToMany
+	@PrimaryKeyJoinColumn
 	private List<Paciente> pacientes;
 	
 	

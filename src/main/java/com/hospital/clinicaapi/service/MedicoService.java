@@ -18,8 +18,8 @@ public class MedicoService {
 		return medicoRepository.findAll();
 	}
 	
-	public void salvarMedicos(Medico medico) {
-		medicoRepository.save(medico);
+	public Medico salvarMedicos(Medico medico) {
+		return medicoRepository.save(medico);
 	}
 	
 	public Medico atualizarMedicos(Medico medico) {

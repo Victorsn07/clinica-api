@@ -4,6 +4,9 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToOne;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 
 @Entity
 public class Paciente {
@@ -14,8 +17,14 @@ public class Paciente {
 	
 	private String nome;
 	
+	private String idade;
+	
+	@OneToOne
+	@PrimaryKeyJoinColumn
 	private Endereco endereco;
 	
+	@ManyToOne
+	@PrimaryKeyJoinColumn
 	private Medico medico;
 	
 
@@ -38,6 +47,14 @@ public class Paciente {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+	
+	public String getIdade() {
+		return idade;
+	}
+	
+	public void setIdade(String idade) {
+		this.idade = idade;
 	}
 
 	public Endereco getEndereco() {
