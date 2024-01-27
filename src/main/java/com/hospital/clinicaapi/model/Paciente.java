@@ -15,9 +15,15 @@ public class Paciente {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private String nome;
+	private String nomePaciente;
 	
-	private String idade;
+	private String numeroCPF;
+	
+	private String dtCriacao;
+	
+	private String dtNascimento;
+	
+	private String telefone;
 	
 	@OneToOne
 	@PrimaryKeyJoinColumn
@@ -41,20 +47,44 @@ public class Paciente {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomePaciente() {
+		return nomePaciente;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomePaciente(String nomePaciente) {
+		this.nomePaciente = nomePaciente;
 	}
 	
-	public String getIdade() {
-		return idade;
+	public String getNumeroCPF() {
+		return numeroCPF;
 	}
 	
-	public void setIdade(String idade) {
-		this.idade = idade;
+	public void setNumeroCPF(String numeroCPF) {
+		this.numeroCPF = numeroCPF;
+	}
+	
+	public String getDtCriacao() {
+		return dtCriacao;
+	}
+	
+	public void setDtCriacao(String dtCriacao) {
+		this.dtCriacao = dtCriacao;
+	}	
+	
+	public String getDtNascimento() {
+		return dtNascimento;
+	}
+	
+	public void setDtNascimento(String dtNascimento) {
+		this.dtNascimento = dtNascimento;
+	}
+	
+	public String getTelefone() {
+		return telefone;
+	}
+	
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
 	}
 
 	public Endereco getEndereco() {

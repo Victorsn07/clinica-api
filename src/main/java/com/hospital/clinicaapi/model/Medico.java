@@ -16,9 +16,9 @@ public class Medico {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	
-	private String nome;
+	private String nomeMedico;
 	
-	private String crm;
+	private String numeroCRM;
 	
 	private String especializacao;
 	
@@ -35,20 +35,20 @@ public class Medico {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getNomeMedico() {
+		return nomeMedico;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setNomeMedico(String nomeMedico) {
+		this.nomeMedico = nomeMedico;
 	}
 
-	public String getCrm() {
-		return crm;
+	public String getNumeroCRM() {
+		return numeroCRM;
 	}
 
-	public void setCrm(String crm) {
-		this.crm = crm;
+	public void setNumeroCRM(String numeroCRM) {
+		this.numeroCRM = numeroCRM;
 	}
 
 	public String getEspecializacao() {
